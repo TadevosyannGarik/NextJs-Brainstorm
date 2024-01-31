@@ -20,16 +20,16 @@ export const OrganizationSidebar = () => {
     const favorites = searchParams.get("favorites");
 
     return (
-        <div className="hidden lg:flex flex-col space-y-6 w-[206px] pl-5 pt-5">
+        <div className="hidden lg:flex flex-col space-y-6 w-[250px] pl-5 pt-5 border-r border-zinc-200">
             <Link href="/"> 
-                <div className="flex items-center gap-x-2">
+                <div className="flex items-center gap-x-2 pr-5">
                     <Image 
                         src="/logo.svg"
                         alt="Logo"
                         height={60}
                         width={60}
                     />
-                    <span className={cn("font-semibold text-xl", font.className)}>
+                    <span className={cn("font-semibold text-xl ", font.className)}>
                         Brainstorm
                     </span>
                 </div>
@@ -41,7 +41,8 @@ export const OrganizationSidebar = () => {
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
-                            width: "100%"
+                            width: "100%",
+                            paddingRight: "20px"
                         },
                         organizationSwitcherTrigger: {
                             padding: "6px",
@@ -54,7 +55,7 @@ export const OrganizationSidebar = () => {
                     }
                 }}
             />
-            <div className="space-y-1 w-full">
+            <div className="space-y-1 w-full pr-5">
                 <Button 
                     asChild 
                     size="lg" 
@@ -63,7 +64,7 @@ export const OrganizationSidebar = () => {
                 >
                     <Link href="/">
                         <LayoutDashboard className="h-4 w-4 mr-2" />
-                        Team Borads
+                        Team Boards
                     </Link>
                 </Button>
                 <Button 
@@ -77,9 +78,10 @@ export const OrganizationSidebar = () => {
                         query: { favorites: true }
                     }}>
                         <Star className="h-4 w-4 mr-2" />
-                        Favorite Borads
+                        Favorite Boards
                     </Link>
                 </Button>
+                <hr />
             </div>
         </div>
     )
