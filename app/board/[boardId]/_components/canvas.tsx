@@ -12,6 +12,7 @@ import {nanoid} from "nanoid"
 import { LiveObject } from "@liveblocks/client";
 import { LayerPreview } from "./layer-preview";
 import { SelectionBox } from "./selection-box";
+import { SelectionTools } from "./selection-tools";
 
 
 const MAX_LAYERS = 100;
@@ -28,7 +29,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
     });
 
     const [camera, setCamera] = useState<Camera>({ x: 0, y: 0 });
-    const [lastUsedColor, setLastColor] = useState<Color>({
+    const [lastUsedColor, setLastUsedColor] = useState<Color>({
         r: 0,
         g: 0,
         b: 0,
@@ -222,6 +223,10 @@ export const Canvas = ({ boardId }: CanvasProps) => {
                 redo={history.redo}
                 undo={history.undo}
             />
+            <SelectionTools
+        camera={camera}
+        setLastUsedColor={setLastUsedColor}
+      />
             <svg 
                 className="h-[100vh] w-[100vw]" 
                 onWheel={onWheel} 

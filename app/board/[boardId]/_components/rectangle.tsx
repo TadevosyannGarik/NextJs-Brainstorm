@@ -10,7 +10,6 @@ interface RectangleProps {
 };
 
 export const Rectangle = ({ id, layer, onPointerDown, selectionColor }: RectangleProps) => {
-    console.log({id, layer})
     const { x, y, width, height, fill } = layer;
 
     return (
