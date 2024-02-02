@@ -30,7 +30,6 @@ export const LayerPreview = memo(({ id, onLayerPointerDown, selectionColor }: La
             />
         );
         default:
-        console.warn("Unknown Layer Type");
         return null
     }
 });
